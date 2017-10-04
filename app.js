@@ -61,7 +61,10 @@ var server = http.createServer(function(request, response){
             response.write(contents);
             response.end();
         })
-    } 
+    } else{
+        response.writeHead(404);
+        response.end("route not found");
+    }
 });
 server.listen(7077);
 
